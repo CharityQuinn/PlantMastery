@@ -1,0 +1,131 @@
+body {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+
+  background-image: url("../images/architecture-black-and-white-buildings-316902.jpg");
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.buttonspersonal{
+  text-align:center;
+   margin:auto;
+}
+.title {
+  color: white;
+}
+.pfont {
+  color: black;
+}
+button {
+    background: rgba(0,0,0,0);
+    border: 5px white solid;
+    color: #f2f2f2;
+    font-size: 1em;
+    font-weight: bold;
+    width: 190px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+  
+  
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0);
+  outline: 3px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+/*   text-shadow: none; */
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+button:hover{
+/*   background:rgba(255,255,255,0.8);
+  color:#20c5dc;
+  border:2px #FFF solid; */
+/*   border: 1px solid; */
+  box-shadow: inset 0 0 35px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 30px;
+/*   text-shadow: 1px 1px 2px #427388;  */
+  -webkit-transition: all .5s linear;
+  -moz-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  transition: all .5s linear;
+}
+.cg {
+  font-size: 25px;
+  width: 35vh;
+  height: 10vh;
+  margin: 2%;
+}
+
+.jg {
+  font-size: 25px;
+  width: 35vh;
+  height: 10vh;
+  margin: 0;
+}
+  
+.logoutbtn {
+  width: 75px;
+  height: 30px;
+    border: none;
+    
+  }
+
+/* group divs */
+.groups {
+  background: rgba(0,0,0,0);
+  border: 5px white solid;
+  color: #f2f2f2;
+  font-size: 35px;
+  font-weight: bold;
+  width: 50vh;
+  height: 12vh;
+  margin: 5vh;
+  padding-top: 5%;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+
+  text-align:center;
+
+box-shadow: inset 0 0 100px rgba(255, 255, 255, 0);
+outline: 3px solid;
+outline-color: rgba(255, 255, 255, .5);
+outline-offset: 0px;
+/*   text-shadow: none; */
+transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.groups:hover{
+  /*   background:rgba(255,255,255,0.8);
+    color:#20c5dc;
+    border:2px #FFF solid; */
+  /*   border: 1px solid; */
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 35px;
+  /*   text-shadow: 1px 1px 2px #427388;  */
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+  }
+
+
+  .groupdivs {
+    color: white;
+    margin: auto;
+    border: 5px white solid;
+    padding-top: 3%;
+    font-family: 'Caveat', cursive;
+  }
+
+  .dashbody {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+  }
+
+  .font {
+    font-family: 'Caveat', cursive;
+  }
