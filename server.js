@@ -53,17 +53,18 @@ mongoose.connect("mongodb://localhost/proj3PlantMastery", {
 
 app.get("/scrape", function (req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://www.houseplantsexpert.com/a-z-list-of-house-plants.html").then(function (response) {
+  axios.get("https://www.houseplantsexpert.com/indoor-and-house-plants-care-guides.html").then(function (response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
     const plantArr = [];
     // Now, we grab every h2 within an plant tag, and do the following:
-    $("h1").each(function (i, element) {
+    $("mylist").each(function (i, element) {
       // Save an empty result object
       var result = {};
 
       // Add the text and href of every link, and save them as properties of the result object
       result.title = $(this)
+        .find(li)
         .children("a")
         .text();
       result.link = $(this)

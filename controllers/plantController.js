@@ -21,12 +21,6 @@ module.exports = {
       .then(dbPlant => res.json(dbPlant))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
-    db.Plant
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbPlant => res.json(dbPlant))
-      .catch(err => res.status(422).json(err));
-  },
   remove: function(req, res) {
     db.Plant
       .findById({ _id: req.params.id })
