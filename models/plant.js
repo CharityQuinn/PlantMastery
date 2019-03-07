@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const plantSchema = new Schema({
   name: { type: String},
-  link: {type: String},
+  link: {type: String}
   // watering: String,
   // lighting: {type: String, required:true }
 });
