@@ -7,10 +7,13 @@ const app = express();
 
 export default {
   getPlants() {
-    //return axios.get('/api/plants');
+    return axios.get('/api/plants');
    },
   getPlantById(plantId) {
     return axios.get(`/api/plants/${plantId}`);
+  },
+  removePlant(plantId) {
+    return axios.delete(`/api/plant/${plantId}`)
   }
   
 
