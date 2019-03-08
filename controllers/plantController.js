@@ -21,6 +21,12 @@ module.exports = {
       .then(dbPlant => res.json(dbPlant))
       .catch(err => res.status(422).json(err));
   },
+  put: function(req, res) {
+      db.Plant
+        .put(req.body)
+        .then(dbPlant => res.json(dbPlant))
+        .catch(err => res.sttus(422).json(err));
+  },
   remove: function(req, res) {
     db.Plant
       .findById({ _id: req.params.id })
