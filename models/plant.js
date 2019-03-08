@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const plantSchema = new Schema({
   name: { type: String},
   link: {type: String},
-  image: {type: String}
+  description: {type: String},
+  image: {}
  
 });
 
