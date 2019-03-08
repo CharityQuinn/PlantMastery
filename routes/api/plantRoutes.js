@@ -10,6 +10,6 @@ router.route("/")
 router
   .route("/:id")
   .get(plantController.findById)
-  .put(plantController.update)
+  
   
 module.exports = router;

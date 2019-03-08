@@ -1,56 +1,28 @@
-var express = require("express");
-var logger = require("morgan");
-var mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
+const logger = require('morgan');
+const routes = require('./routes');
 
-// Our scraping tools
-// Axios is a promised-based http library, similar to jQuery's Ajax method
-// It works on the client and on the server
-var axios = require("axios");
-var cheerio = require("cheerio");
-
-// Require all models
-var db = require("./models");
-
+const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Initialize Express
-var app = express();
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(logger('dev'));
 
-var databaseUri = 'mongodb://localhost/mongoHeadlines';
-// Configure middleware
-if(process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  mongoose.connect(databaseUri);
+// if in production, serve up React's build folder in the client subfolder
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 }
 
-var dbase = mongoose.connection;
-dbase.on("err", function(err) {
-  console.log("Mongoose Error: ", err);
-});
+app.use(routes);
 
-dbase.once('open', function() {
-  console.log("Mongoose connection successful.");
-});
+mongoose.Promise = Promise;
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/proj3PlantMastery', {useNewUrlParser: true});
 
-// Use morgan logger for logging requests
-app.use(logger("dev"));
-// Parse request body as JSON
-app.use(express.urlencoded({
-  extended: true
-}));
-app.use(express.json());
-// Make public a static folder
-app.use(express.static("public"));
-
-// Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/proj3PlantMastery", {
-  useNewUrlParser: true
-});
+app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
 
 
-// Start the server
-app.listen(PORT, function () {
-  console.log("App running on port " + PORT + "!");
-});
+
+

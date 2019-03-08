@@ -1,9 +1,10 @@
 const router = require("express").Router();
-const plantRoutes = require("./plantRoutes");
+const plantRoutes = require("./plantRoutes"); 
+const scrapeRoutes = require("./scrapeRoute")
 
 // Plant routes
-router.use("/plants", scrapeRoutes);
 router.use("/plants", plantRoutes);
+router.use("/scrape", scrapeRoutes);
 
 
 module.exports = router;
