@@ -5,38 +5,56 @@ const db = require('../../models');
 
 router.get("/", function (req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://www.houseplantsexpert.com/a-z-list-of-house-plants.html").then(function (response) {
-    // Then, we load that into cheerio and save it to $ for a shorthand selector
-    var $ = cheerio.load(response.data);
+  axios.get('https://www.houseplantsexpert.com/a-z-list-of-house-plants.html').then(result => {
+    const $ = cheerio.load(result.data);
 
-    const results = [];
-    // Now, we grab every h2 within an plant tag, and do the following:
-    //$("li.simplePagerPage1").each(function (i, element) {
-    $("#demoOne1").each(function (i, element) {
-      // $("li").each(function(i, element) {
-      
-      var title = $(element).children('a').text();
-      var link = $(element).children().attr("href");
-      var image = $(element).children("img-responsive").text();
-     
-      results.push({
-        title: title,
-        link: link,
-        image: image
-      });
+    const plantData = [];
 
+    $('.mylist ul').each(function(i, element) {
+      let plantType = '';
+
+      switch ($(element).attr('id')) {
+        case 'demoOne1':
+          plantType = 'Flowering House Plants';
+          break;
+        case 'demoOne2':
+          plantType = 'Foliage Type Plants';
+          break;
+        case 'demoOne3':
+          plantType = 'Succulents and Cacti';
+          break;
+        default:
+          plantType = '';
+          break;
+      }
+      console.log(plantType);
+      $(element)
+        .children('li')
+        .each(function(j, li) {
+          const plantInfo = {
+            name: $(li)
+              .find('a')
+              .text().trim(),
+            link: $(li)
+              .find('a')
+              .attr('href'),
+            description: $(li).text().trim(),
+            image: $(li)
+              .find('img')
+              .attr('src'),
+            plantType: plantType
+          };
+
+          plantData.push(plantInfo);
+          db.Plant.create(plantData);
+        });
     });
-
-    db.Plant.create(results)
-      .then((dbPlant) => res.json(dbPlant))
-      .catch(err => {
-        console.log(err);
-        res.json(err);
-      })
+    console.log(plantData);
+    res.json(plantData);
 
   });
-});
 
+});
 
 
 // Route for getting all Plants from the db
@@ -54,5 +72,3 @@ router.get("/plant", function (req, res) {
 
 
 module.exports = router;
-
-  
