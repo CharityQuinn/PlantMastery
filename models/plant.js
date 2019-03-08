@@ -5,7 +5,8 @@ const plantSchema = new Schema({
   name: { type: String},
   link: {type: String},
   description: {type: String},
-  image: {}
+  image: {},
+  plantType: {type: String}
  
 });
 
