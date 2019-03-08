@@ -11,27 +11,24 @@ router.get("/", function (req, res) {
 
     const results = [];
     // Now, we grab every h2 within an plant tag, and do the following:
-    //$(".title-md").each(function (i, element) {
-      $("li").each(function(i, element) {
-      // Save an empty result object
-      //var result = {};
+    //$("li.simplePagerPage1").each(function (i, element) {
+    $("#demoOne1").each(function (i, element) {
+      // $("li").each(function(i, element) {
       
       var title = $(element).children('a').text();
       var link = $(element).children().attr("href");
+      var image = $(element).children("img-responsive").text();
      
       results.push({
         title: title,
-        link: link
+        link: link,
+        image: image
       });
-
-      //plantArr.push(result.name);
-      //console.log(plantArr);
-
 
     });
 
     db.Plant.create(results)
-      .then((dbPlants) => res.json(dbPlants))
+      .then((dbPlant) => res.json(dbPlant))
       .catch(err => {
         console.log(err);
         res.json(err);
@@ -47,7 +44,6 @@ router.get("/plant", function (req, res) {
   // Grab every document in the Plants collection
   db.Plant.find({})
     .then(function (dbPlant) {
-      // If we were able to successfully find Plants, send them back to the client
       res.json(dbPlant);
     })
     .catch(function (err) {
