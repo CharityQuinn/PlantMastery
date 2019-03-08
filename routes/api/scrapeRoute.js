@@ -46,6 +46,7 @@ router.get("/", function (req, res) {
           };
 
           plantData.push(plantInfo);
+          db.Plant.create(plantData);
         });
     });
     console.log(plantData);
