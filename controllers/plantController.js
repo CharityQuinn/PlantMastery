@@ -15,7 +15,7 @@ module.exports = {
       .then(dbPlant => res.json(dbPlant))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
+  savePlant: function(req, res) {
     db.Plant
       .create(req.body)
       .then(dbPlant => res.json(dbPlant))
@@ -27,7 +27,7 @@ module.exports = {
         .then(dbPlant => res.json(dbPlant))
         .catch(err => res.sttus(422).json(err));
   },
-  remove: function(req, res) {
+  removePlant: function(req, res) {
     db.Plant
       .findById({ _id: req.params.id })
       .then(dbPlant => dbPlant.remove())
