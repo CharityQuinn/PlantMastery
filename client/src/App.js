@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Carousel } from "react-bootstrap";
-import './App.css';
+
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="holder.js/800x400?text=First slide&bg=373940"
+      src="https://res.cloudinary.com/q1962/image/upload/v1552069838/sample.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -21,7 +21,7 @@ class App extends Component {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="holder.js/800x400?text=Second slide&bg=282c34"
+      src="images/a-fleshy-plant-1494116_640.jpg"
       alt="Third slide"
     />
 
@@ -33,7 +33,7 @@ class App extends Component {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="holder.js/800x400?text=Third slide&bg=20232a"
+      src="images/Aloe.jpeg"
       alt="Third slide"
     />
 
@@ -42,7 +42,7 @@ class App extends Component {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
-</Carousel>;
+</Carousel>
       </div>
     );
   }
