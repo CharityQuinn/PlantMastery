@@ -62,8 +62,8 @@ class Flowering extends Component {
                     See More.
                   </a>
                   <Link to={`/saved/${plant._id}`} className="btn btn-block btn-danger">View plant</Link>
-                  <button type="button" class="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
-                  <button type="button" class="btn btn-link" id="BtnDisLike">Dislike Plant</button>
+                  <button type="button" className="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
+                  <button type="button" className="btn btn-link" id="BtnDisLike">Dislike Plant</button>
                 </div>
               </div>
             </div>

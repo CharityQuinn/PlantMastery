@@ -48,10 +48,10 @@ class App extends Component {
      
      <Nav />
      <Switch>
-       <Route exact path="/" component={Home} />
-       <Route exact path="/" component={Flowering + this.state.flowerList} />
-       <Route exact path="/" component={Succulents + this.state.succulentList} />
-       <Route exact path="/" component={Foliage + this.state.foliageList} />
+       {/* <Route exact path="/" component={Home} /> */}
+       {/* <Route exact path="/" component={Flowering} /> */}
+       <Route exact path="/" component={Succulents} />
+       {/* <Route exact path="/" component={Foliage + this.state.foliageList} /> */}
      </Switch>
    
      </div>

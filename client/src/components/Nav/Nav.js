@@ -9,16 +9,16 @@ const Nav = () => (
   <Navbar.Brand href="/">House Plants Advisor</Navbar.Brand>
         <Button href="#">Home</Button>
         <Button href="#">Plantcare</Button>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"      aria-haspopup="true" aria-expanded="false">Search Types</button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="../../containers/flowering.js">Flowers</a>
-              <a class="dropdown-item" href="../../containers/foliage.js">Foliage</a>
-              <a class="dropdown-item" href="../../containers/succulents.js">Succulents</a>
+        <div className="input-group">
+          <div className="input-group-prepend">
+            <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"      aria-haspopup="true" aria-expanded="false">Search Types</button>
+            <div className="dropdown-menu">
+              <a className="dropdown-item" href="../../containers/flowering.js">Flowers</a>
+              <a className="dropdown-item" href="../../containers/foliage.js">Foliage</a>
+              <a className="dropdown-item" href="../../containers/succulents.js">Succulents</a>
             </div>
           </div>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button"/>
+            <input type="text" className="form-control" aria-label="Text input with dropdown button"/>
         </div>
   </Navbar>
 
