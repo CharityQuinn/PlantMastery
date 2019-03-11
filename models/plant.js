@@ -6,7 +6,9 @@ const plantSchema = new Schema({
   link: {type: String},
   description: {type: String},
   image: {type: String},
-  plantType: {type: String}
+  plantType: {type: String},
+  likePlant: {type: Boolean,
+    dafault: false}
  
 });
 

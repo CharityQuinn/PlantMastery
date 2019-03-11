@@ -6,6 +6,9 @@ router.route("/")
   .get(plantController.findAll)
   .post(plantController.savePlant);
 
+router.route("/name/:name")
+  .get(plantController.findByName);
+
 // Matches with "/api/plants/:id"
 router
   .route("/:id")

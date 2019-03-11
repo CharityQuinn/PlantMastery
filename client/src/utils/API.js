@@ -1,6 +1,6 @@
 import axios from "axios";
 export default {
-  savePlants() {
+  getSavedPlants() {
     return axios.get('/api/plants');
    },
   getPlantById(plantId) {
