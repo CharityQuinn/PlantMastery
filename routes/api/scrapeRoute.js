@@ -46,11 +46,11 @@ router.get("/", function (req, res) {
           };
 
           plantData.push(plantInfo);
-          db.Plant.create(plantData);
         });
     });
-    console.log(plantData);
-    res.json(plantData);
+    db.Plant.create(plantData)
+      .then(dbPlants => res.json(dbPlants))
+      .catch(err => res.json(err));
 
   });
 
