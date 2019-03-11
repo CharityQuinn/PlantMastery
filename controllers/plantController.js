@@ -15,6 +15,11 @@ module.exports = {
       .then(dbPlant => res.json(dbPlant))
       .catch(err => res.status(422).json(err));
   },
+  findByName: function(req, res) {
+    db.Plant.find({plantType: req.params.name})
+    .then(dbPlant => res.json(dbPlant))
+    .catch(err => res.status(422).json(err));
+  },
   savePlant: function(req, res) {
     db.Plant
       .create(req.body)
