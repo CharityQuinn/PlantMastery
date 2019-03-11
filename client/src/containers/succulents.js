@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import API from '../utils/API';
 
-class Plants extends Component {
+class Succulents extends Component {
   state = {
     plantList: []
   };
@@ -14,6 +14,7 @@ class Plants extends Component {
   getPlants = () => {
     API.getSavedPlants()
       .then(res => this.setState({ plantList: res.data }))
+      
       .catch(err => console.log(err));
   };
 
@@ -62,6 +63,8 @@ class Plants extends Component {
                                 See More.
                               </a>
                               <Link to={`/saved/${plant._id}`} className="btn btn-block btn-danger">View plant</Link>
+                              <button type="button" class="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
+                              <button type="button" class="btn btn-link" id="BtnDisLike">Dislike Plant</button>
                             </div>
                           </div>
                         </div>
@@ -78,4 +81,4 @@ class Plants extends Component {
   }
 }
 
-export default Plants;
+export default Succulents;

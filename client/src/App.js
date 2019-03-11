@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Carousel } from "react-bootstrap";
+// import Nav2 from "./components/Nav2";
+// import Home from "./components/Home";
+
 
 
 class App extends Component {
@@ -22,7 +25,7 @@ class App extends Component {
     <img
       className="d-block w-100"
       src="images/a-fleshy-plant-1494116_640.jpg"
-      alt="Third slide"
+      alt="First slide"
     />
 
     <Carousel.Caption>
@@ -34,7 +37,7 @@ class App extends Component {
     <img
       className="d-block w-100"
       src="images/Aloe.jpeg"
-      alt="Third slide"
+      alt="second slide"
     />
 
     <Carousel.Caption>
