@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Carousel } from "react-bootstrap";
-// import Nav2 from "./components/Nav2";
-// import Home from "./components/Home";
+
+import "./App.css";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
 
 
 
@@ -46,9 +47,14 @@ class App extends Component {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+      <Nav />
+      <Home />
+   
+
       </div>
     );
   }
 }
 
 export default App;
+
