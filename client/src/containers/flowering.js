@@ -41,7 +41,6 @@ class Flowering extends Component {
     return (
       <div className="row">
       <React.Fragment>
-      <h3>Showing Saved Plants</h3>
       {console.log(this.state.flowerList)}
         {this.state.flowerList.map(plant => (
             <div className="col-12 col-md-4" key={plant._id}>
