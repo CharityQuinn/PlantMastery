@@ -25,17 +25,17 @@ class App extends Component {
   getPlants = () => {
     API.getSavedPlants()
       .then(res => {
-        let succulent = "Succulents and Cacti";
-        let foliages = "Foliage Type Plants";
-        let flower = "Flowering House Plants"
-        succulent = res.data.filter(plant => plant.plantType === succulent);
-        foliages = res.data.filter(plant => plant.plantType === foliages);
-        flower = res.data.filter(plant => plant.plantType === flower);
+        let succulentB = "Succulents and Cacti";
+        let foliagesB = "Foliage Type Plants";
+        let flowerB = "Flowering House Plants"
+        let succulent2 = res.data.filter(plant => plant.plantType === succulentB);
+        let foliages2 = res.data.filter(plant => plant.plantType === foliagesB);
+        let flower2 = res.data.filter(plant => plant.plantType === flowerB);
 
         this.setState({
-          succulentList: succulent,
-          foliageList: foliages,
-          flowerList: flower
+          succulentList: succulent2,
+          foliageList: foliages2,
+          flowerList: flower2
         });
       }) 
       .catch(err => console.log(err));
