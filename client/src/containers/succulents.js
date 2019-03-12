@@ -8,6 +8,9 @@ class Succulents extends Component {
 
   componentDidMount() {
     this.getPlants();
+    // this.setState({
+    //   succulentList: this.props.succulents
+    // })
   }
 
   getPlants = () => {
@@ -33,8 +36,8 @@ class Succulents extends Component {
     return (
       <div className="row">
       <React.Fragment>
-        {this.state.succulentList.map(plant => (
-            <div className="col-12 col-md-4" key={plant._id}>
+        {this.state.succulentList.length ? this.state.succulentList.map(plant => (
+            <div className="col-12 col-sm-6 col-md-4" key={plant._id}>
               <div className="card">
                 <img src={plant.image} alt={plant.name} className="card-img-top" />
                 <div className="card-body">
@@ -55,7 +58,7 @@ class Succulents extends Component {
                 </div>
               </div>
             </div>
-        ))}
+        )) : ""}
     </React.Fragment>
       </div>
   )}

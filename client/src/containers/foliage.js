@@ -8,6 +8,9 @@ class Foliage extends Component {
 
   componentDidMount() {
     this.getPlants();
+    // this.setState({
+    //   foliageList: this.props.foliage
+    // })
   }
 
   getPlants = () => {
@@ -34,8 +37,8 @@ class Foliage extends Component {
     return (
       <div className="row">
       <React.Fragment>
-        {this.state.foliageList.map(plant => (
-            <div className="col-12 col-md-4" key={plant._id}>
+        {this.state.foliageList.length ? this.state.foliageList.map(plant => (
+            <div className="col-12 col-sm-6 col-md-4" key={plant._id}>
               <div className="card">
                 <img src={plant.image} alt={plant.name} className="card-img-top" />
                 <div className="card-body">
@@ -56,7 +59,7 @@ class Foliage extends Component {
                 </div>
               </div>
             </div>
-        ))}
+        )) : ""}
     </React.Fragment>
       </div>
   )}
