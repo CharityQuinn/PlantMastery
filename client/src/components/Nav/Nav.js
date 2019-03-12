@@ -2,16 +2,17 @@ import React from "react";
 import {Navbar, Button} from 'react-bootstrap'
 import "./Nav.css";
 import {} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Nav = () => (
  
 <Navbar  bg="dark" variant="dark">
-  <Navbar.Brand as={Link} to="/">House Plants Advisor</Navbar.Brand>
-        <Button as={Link} to="#">Home</Button>
-        <Button as={Link} to="#">Plantcare</Button>
-        <Button as={Link} to="/search">Search</Button>
-        
-  </Navbar>
+        <Link to={{pathname:"/"}}><Navbar.Brand>House Plants Advisor</Navbar.Brand></Link>
+        <Link to={{pathname:"/"}}><Button >Home</Button></Link>
+        <Link to={{pathname:"/flowers"}}><Button >Flowering</Button></Link>
+        <Link to={{pathname:"/foliage"}}><Button >Foliage</Button></Link>
+        <Link to={{pathname:"/succulents"}}><Button >Succulents</Button></Link>
+</Navbar>
 
 )
 

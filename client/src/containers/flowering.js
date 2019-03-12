@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import API from '../utils/API';
 
 class Flowering extends Component {
@@ -11,21 +10,19 @@ class Flowering extends Component {
 
   componentDidMount() {
     this.getPlants();
+    // this.setState({
+    //   flowerList: this.props.flowers
+    // })
   }
 
   getPlants = () => {
     API.getSavedPlants()
       .then(res => {
-        let succulent = "Succulents and Cacti";
-        let foliages = "Foliage Type Plants";
+
         let flower = "Flowering House Plants"
-        succulent = res.data.filter(plant => plant.plantType === succulent);
-        foliages = res.data.filter(plant => plant.plantType === foliages);
         flower = res.data.filter(plant => plant.plantType === flower);
 
         this.setState({
-          succulentList: succulent,
-          foliageList: foliages,
           flowerList: flower
         });
       }) 
@@ -42,10 +39,9 @@ class Flowering extends Component {
     return (
       <div className="row">
       <React.Fragment>
-      <h3>Showing Saved Plants</h3>
       {console.log(this.state.flowerList)}
-        {this.state.flowerList.map(plant => (
-            <div className="col-12 col-md-4" key={plant._id}>
+        {this.state.flowerList.length ? this.state.flowerList.map(plant => (
+            <div className="col-12 col-sm-6 col-md-4" key={plant._id}>
               <div className="card">
                 <img src={plant.image} alt={plant.name} className="card-img-top" />
                 <div className="card-body">
@@ -61,13 +57,12 @@ class Flowering extends Component {
                     className="btn btn-success btn-small">
                     See More.
                   </a>
-                  <Link to={`/saved/${plant._id}`} className="btn btn-block btn-danger">View plant</Link>
-                  <button type="button" class="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
-                  <button type="button" class="btn btn-link" id="BtnDisLike">Dislike Plant</button>
+                  <button type="button" className="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
+                  <button type="button" className="btn btn-link" id="BtnDisLike">Dislike Plant</button>
                 </div>
               </div>
             </div>
-        ))}
+        )) : ""}
     </React.Fragment>
       </div>
   )}

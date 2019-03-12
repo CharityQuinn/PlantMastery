@@ -10,3 +10,10 @@ font-size: 30px;
     width: 60%!important;
     margin: 0 auto;
 }
+
+.navbar-expand {
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: space-between;
+}
