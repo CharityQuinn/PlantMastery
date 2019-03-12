@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import API from '../utils/API';
 
 class Foliage extends Component {
@@ -13,10 +12,17 @@ class Foliage extends Component {
 
   getPlants = () => {
     API.getSavedPlants()
-      .then(res => this.setState({ plantsList: res.data }))
-      // console.log(plantsList)
+      .then(res => {
+        let isFoliages = "Foliage Type Plants";
+        let foliages = res.data.filter(plant => plant.plantType === isFoliages);
+
+        this.setState({
+          foliageList: foliages
+        });
+      }) 
       .catch(err => console.log(err));
   };
+
 
   removePlant = plantId => {
     API.removePlant(plantId)
@@ -46,9 +52,8 @@ class Foliage extends Component {
                     className="btn btn-success btn-small">
                     See More.
                   </a>
-                  <Link to={`/saved/${plant._id}`} className="btn btn-block btn-danger">View plant</Link>
-                  <button type="button" class="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
-                  <button type="button" class="btn btn-link" id="BtnDisLike">Dislike Plant</button>
+                  <button type="button" className="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
+                  <button type="button" className="btn btn-link" id="BtnDisLike">Dislike Plant</button>
                 </div>
               </div>
             </div>

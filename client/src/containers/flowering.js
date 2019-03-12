@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import API from '../utils/API';
 
 class Flowering extends Component {
@@ -61,7 +60,6 @@ class Flowering extends Component {
                     className="btn btn-success btn-small">
                     See More.
                   </a>
-                  <Link to={`/saved/${plant._id}`} className="btn btn-block btn-danger">View plant</Link>
                   <button type="button" className="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
                   <button type="button" className="btn btn-link" id="BtnDisLike">Dislike Plant</button>
                 </div>
