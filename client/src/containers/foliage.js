@@ -34,7 +34,6 @@ class Foliage extends Component {
     return (
       <div className="row">
       <React.Fragment>
-      <h3>Showing Foliage Plants</h3>
         {this.state.foliageList.map(plant => (
             <div className="col-12 col-md-4" key={plant._id}>
               <div className="card">

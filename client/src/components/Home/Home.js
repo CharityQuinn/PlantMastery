@@ -12,20 +12,22 @@ const Home = () => (
     alt="First slide"
   />
   <Carousel.Caption>
-    <h3>First slide label</h3>
-    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    <h3>Welcome to Houseplants Advisor</h3>
+    <p> Search flowers and foliges and succulents</p>
   </Carousel.Caption>
 </Carousel.Item>
 <Carousel.Item>
   <img
-    className="d-block w-100"
+    className="d-block w-100 "
+    
     src="images/a-fleshy-plant-1494116_640.jpg"
     alt="Third slide"
   />
 
   <Carousel.Caption>
-    <h3>Second slide label</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <h3>KAFFIR LILY PLANT</h3>
+    <p>The clusters of spring time flowers the kaffir lily blooms</p>
+    <p> makes this species well worth the effort needed to enable it to flower well.</p>
   </Carousel.Caption>
 </Carousel.Item>
 <Carousel.Item>
@@ -36,32 +38,35 @@ const Home = () => (
   />
 
   <Carousel.Caption>
-    <h3>Third slide label</h3>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    <h3>Hatiora Gaertneri</h3>
+    <p>Hatiora Gaertneri Tropical cactus that requires a certain amount of regular</p>
+    <p> water in order to survive.</p>
   </Carousel.Caption>
 </Carousel.Item>
 <Carousel.Item>
   <img
     className="d-block w-100"
-    src="images/Succulent-1031541_640.jpg"
+    src="images/wandering_jew.jpg"
     alt="Third slide"
   />
 
   <Carousel.Caption>
-    <h3>Fourth slide label</h3>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    <h3>Tradescantia</h3>
+    <p>Tradescantia This species is a low growing plant suitable for </p>
+    <p> planting in hanging baskets.amily.</p>
   </Carousel.Caption>
 </Carousel.Item>
 <Carousel.Item>
   <img
     className="d-block w-100"
-    src="images/swiss_cheese_plant_leaf.jpg"
+    src="images/syngonium_podophyllum.jpg"
     alt="Third slide"
   />
 
   <Carousel.Caption>
-    <h3>Fifth slide label</h3>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    <h3>Syngonium Podophyllum</h3>
+    <p>Syngonium Podophyllum Very similar species as the Philodendron </p>
+    <p>and from the same.</p>
   </Carousel.Caption>
 </Carousel.Item>
 
