@@ -43,7 +43,7 @@ const Home = () => (
 <Carousel.Item>
   <img
     className="d-block w-100"
-    src="images/Devils_Ivy.jpg"
+    src="images/Succulent-1031541_640.jpg"
     alt="Third slide"
   />
 
@@ -52,6 +52,19 @@ const Home = () => (
     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
   </Carousel.Caption>
 </Carousel.Item>
+<Carousel.Item>
+  <img
+    className="d-block w-100"
+    src="images/swiss_cheese_plant_leaf.jpg"
+    alt="Third slide"
+  />
+
+  <Carousel.Caption>
+    <h3>Fifth slide label</h3>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+  </Carousel.Caption>
+</Carousel.Item>
+
 </Carousel>
   
   )
