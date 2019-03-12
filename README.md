@@ -1,3 +1,22 @@
+**Plant Mastery**
+
+This app will assist the user find one plant or many and discover how to properly care for that plant.  The plants are catagorized by type.  There is a large group of *flowering* plants, a group of *foliage* filled plants, and a group of *succulants and cacti*.  There are photographs of the plants, a small description of the plant and a link to see more detailed information.  
+
+The success of this project would not be possible without the assistance of our tremendous teacher and TA's.  I am also very imporessed with and enjoy the company of my team members for this project.  
+
+If you have any questions about this app or would like to contact me, please contact me at my [email](charityaquinn@gmail.com)
+
+Attached please find our [Presentaion:](https://docs.google.com/presentation/d/1kI_l-NJEAyjhM3FpH13fQl5HlETzqUJqP6iP9l44EJc/edit?usp=sharing)
+
+Our app on [Heroku](https://plantmastery.herokuapp.com/)
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
