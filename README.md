@@ -1,21 +1,46 @@
-**Plant Mastery**
+# House Plants Advisor (Plant Mastery)
 
 This app will assist the user find one plant or many and discover how to properly care for that plant.  The plants are catagorized by type.  There is a large group of *flowering* plants, a group of *foliage* filled plants, and a group of *succulants and cacti*.  There are photographs of the plants, a small description of the plant and a link to see more detailed information.  
 
 The success of this project would not be possible without the assistance of our tremendous teacher and TA's.  I am also very imporessed with and enjoy the company of my team members for this project.  
 
+# Our app on [Heroku](https://plantmastery.herokuapp.com/)
+
+
+# Screenshot
+
+![plantMasterly3](https://user-images.githubusercontent.com/45270593/54211545-e7ca2780-44b7-11e9-9056-3e4d0fb4cb50.gif)
+
+
+# Homepage
+
+![plantMaster1](https://user-images.githubusercontent.com/45270593/54298041-6c877500-458e-11e9-8ade-d5915c4449e4.png)
+
+
+# Flowering page
+
+![plantMaster2](https://user-images.githubusercontent.com/45270593/54298148-9b055000-458e-11e9-84af-295e74cee3f8.png)
+
+
+# Foliage page
+
+![plantMaster3](https://user-images.githubusercontent.com/45270593/54298209-b83a1e80-458e-11e9-933e-c963c1e5be42.png)
+
+
+# Succulents page
+
+![plantMaster4](https://user-images.githubusercontent.com/45270593/54298410-0f3ff380-458f-11e9-8602-603cdce2d949.png)
+
+
+
 If you have any questions about this app or would like to contact me, please contact me at my [email](charityaquinn@gmail.com)
+
 
 Attached please find our [Presentaion:](https://docs.google.com/presentation/d/1kI_l-NJEAyjhM3FpH13fQl5HlETzqUJqP6iP9l44EJc/edit?usp=sharing)
 
-Our app on [Heroku](https://plantmastery.herokuapp.com/)
 
 
-
-
-
-
-
+# ------------------------------------------------------------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
