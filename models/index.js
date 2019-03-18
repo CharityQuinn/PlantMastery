@@ -2,5 +2,6 @@
 
 module.exports = {
   Plant: require("./plant"),
+  Toxic: require("./toxicDog")
   
 };
