@@ -27,9 +27,22 @@ class Flowering extends Component {
       .catch(err => console.log(err));
   };
   
-   handleDislike = () => {
-    this.parents(".card").hide();
+  handleLike = () => {
+    let likePlant = this.state.flowerList.likePlant === true;
+    this.setState({
+      flowerList: likePlant
+    });
   };
+
+  handleDislike = event => {
+    this.state.flowerList.plant.id.hide();
+    let flowerList = this.state.flowerList.map();
+    this.setState({
+      flowerList: flowerList
+    });
+  };
+  
+  
   
   
   
@@ -53,10 +66,10 @@ class Flowering extends Component {
                     rel="noopener noreferrer"
                     target="_blank"
                     className="btn btn-success btn-small">
-                    See More.
+                    See More
                   </a>
-                  <button type="button" className="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
-                  <button type="button" className="btn btn-link" id="BtnDisLike">Dislike Plant</button>
+                  <button type="button" className="btn btn-link" id="BtnLike" onClick={this.handleLike}>Like Plant{plant.likePlant}</button>
+                  <button type="button" className="btn btn-link" id="BtnDisLike" onClick={this.handleDislike}>Dislike Plant</button>
                 </div>
               </div>
             </div>
