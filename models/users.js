@@ -1,3 +1,24 @@
+
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  firstName: { type: String},
+  lastName: {type: String},
+  email: {type: String},
+  likePlant: {type: String}
+ 
+});
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
+
+
+
+
+
+
 const bcryptjs = require("bcryptjs");
 
 module.exports = function(sequelize, DataTypes) {
@@ -26,14 +47,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 255]
       }
     },
-    userName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        len: [1, 255]
-      }
-    },
+    
     email: {
        type: DataTypes.STRING,
       allowNull: false,

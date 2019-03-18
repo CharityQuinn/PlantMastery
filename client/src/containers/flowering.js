@@ -3,8 +3,6 @@ import API from '../utils/API';
 
 class Flowering extends Component {
   state = {
-    succulentList: [],
-    foliageList: [],
     flowerList: []
   };
 
@@ -28,13 +26,13 @@ class Flowering extends Component {
       }) 
       .catch(err => console.log(err));
   };
-
-  removePlant = PlantId => {
-    API.deletePlant(PlantId)
-      .then(this.getPlants)
-      .catch(err => console.log(err));
+  
+   handleDislike = () => {
+    this.parents(".card").hide();
   };
-
+  
+  
+  
   render() {
     return (
       <div className="row">
