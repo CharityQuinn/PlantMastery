@@ -27,10 +27,13 @@ class Foliage extends Component {
   };
 
 
-  removePlant = plantId => {
-    API.removePlant(plantId)
-      .then(this.getPlants)
-      .catch(err => console.log(err));
+  handleLike = () => {
+    this.parents(".card").state.flowerList.likePlant = true;
+  };
+
+  handleDislike = () => {
+    this.parents(".card").hide();
+    let flowerList = this.state.flowerList.map();
   };
 
   render() {

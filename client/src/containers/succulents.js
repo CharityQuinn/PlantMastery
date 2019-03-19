@@ -26,10 +26,13 @@ class Succulents extends Component {
       .catch(err => console.log(err));
   };
 
-  removePlant = PlantId => {
-    API.deletePlant(PlantId)
-      .then(this.getPlants)
-      .catch(err => console.log(err));
+  handleLike = () => {
+    this.parents(".card").state.flowerList.likePlant = true;
+  };
+
+  handleDislike = () => {
+    this.parents(".card").hide();
+    let flowerList = this.state.flowerList.map();
   };
 
   render() {
