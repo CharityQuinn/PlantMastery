@@ -26,10 +26,10 @@ class Flowering extends Component {
         this.setState({
           flowerList: flower
         });
-      }) 
+      })
       .catch(err => console.log(err));
   };
-  
+
   handleLike = () => {
     let likePlant = this.state.flowerList.likePlant === true;
     this.setState({
@@ -44,56 +44,56 @@ class Flowering extends Component {
       flowerList: flowerList
     });
   };
-    
+
   render() {
     return (
       <div className="row">
         <React.Fragment>
-        {console.log(this.state.flowerList)}
           {this.state.flowerList.length ? this.state.flowerList.map(plant => (
             <Flippy
-            flipOnHover={false} 
-            flipOnClick={true} 
-            flipDirection="horizontal" 
-            ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle()
-                  // if you pass isFlipped prop component will be controlled component.
-                  // and other props, which will go to div
-            style={{ width: '268px', height: '201px' }} /// these are optional style, it is not necessary
+              key={plant._id}
+              flipOnHover={false}
+              flipOnClick={true}
+              flipDirection="horizontal"
+              ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle()
+              // if you pass isFlipped prop component will be controlled component.
+              // and other props, which will go to div
+              style={{ width: '268px', height: '60vh', margin: "5% 2%", padding: "2% 0 20% 0" }} /// these are optional style, it is not necessary
             >
-            <FrontSide>    
-              <div className="col-12 col-sm-6 col-md-4" key={plant._id}>
-                <div className="card" style={{ width: '268px'}}>
-                  <img src={plant.image} alt={plant.name} className="card-img-top" />
-                  <div className="card-body" style={{ width: '268px', height: '201px'}}>
-                    <h5 className="card-title">{plant.name}</h5>
-                    <p className="card-text"> {plant.description}</p>
-                      <a href={plant.link}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="btn btn-success btn-small">
-                          See More
-                      </a>
-                      <button type="button" className="btn btn-link" id="BtnLike" onClick={this.handleLike}>Like Plant{plant.likePlant}</button>
-                      <button type="button" className="btn btn-link" id="BtnDisLike" onClick={this.handleDislike}>Dislike Plant</button>
+              <FrontSide>
+                <div className="col-12 col-sm-6 col-md-4 plantCard justify-content-center" key={plant._id}>
+                  <div className="card" style={{ width: '268px' }}>
+                    <img src={plant.image} alt={plant.name} style={{ height: '160px' }} />
+                    <div className="card-body" style={{ width: '268px', height: '251px' }}>
+                      <h5 className="card-title">{plant.name}</h5>
+                      <p className="card-text"> {plant.description}</p>
+
+                      <div className="btn-group" role="group" aria-label="Basic example">
+                        <a href={plant.link} ><button type="button" className="btn btn-success">See More</button></a>
+                        <button type="button" className="btn btn-primary" id="BtnLike" onClick={this.handleLike}>Like Plant</button>
+                        <button type="button" className="btn btn-secondary" id="BtnDisLike" onClick={this.handleDislike}>Dislike Plant</button>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FrontSide>
-            <BackSide
-              style={{ backgroundColor: '#175852', color: 'white'}}>
+              </FrontSide>
+              <BackSide
+                style={{ backgroundColor: '#175852', color: 'white' }}>
                 <p className="card-text">
                   <strong>Description</strong>: {plant.description}{' '}
                 </p>
-            </BackSide>  
-          </Flippy>
+              </BackSide>
+            </Flippy>
           )) : ""}
         </React.Fragment>
       </div>
-  )}
+    )
+  }
 
 };
 
 export default Flowering;
-  
-                  
+
+
 

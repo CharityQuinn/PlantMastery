@@ -33,7 +33,7 @@ class Foliage extends Component {
 
   handleDislike = () => {
     this.parents(".card").hide();
-    let flowerList = this.state.flowerList.map();
+    // let flowerList = this.state.flowerList.map();
   };
 
   render() {
