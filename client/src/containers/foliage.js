@@ -27,10 +27,13 @@ class Foliage extends Component {
   };
 
 
-  removePlant = plantId => {
-    API.removePlant(plantId)
-      .then(this.getPlants)
-      .catch(err => console.log(err));
+  handleLike = () => {
+    this.parents(".card").state.flowerList.likePlant = true;
+  };
+
+  handleDislike = () => {
+    this.parents(".card").hide();
+    // let flowerList = this.state.flowerList.map();
   };
 
   render() {
@@ -41,7 +44,7 @@ class Foliage extends Component {
             <div className="col-12 col-sm-6 col-md-4" key={plant._id}>
               <div className="card">
                 <img src={plant.image} alt={plant.name} className="card-img-top" />
-                <div className="card-body">
+                <div className="card-body" style={{width: "100%"}}>
                   <h5 className="card-title">{plant.name}</h5>
                   <p className="card-text">Description: {plant.description}</p>
                   <p className="card-text">
