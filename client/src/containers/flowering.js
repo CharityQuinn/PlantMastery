@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import API from '../utils/API';
-import Flippy, { FrontSide, BackSide } from 'react-flippy';
+// import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import "./type.css";
 
 
 class Flowering extends Component {
   state = {
-    flowerList: []
+    flowerList: [],
+    localStorage: []
   };
 
   componentDidMount() {
@@ -30,12 +31,18 @@ class Flowering extends Component {
       .catch(err => console.log(err));
   };
 
-  handleLike = () => {
-    let likePlant = this.state.flowerList.likePlant === true;
+  handleLike = props => {
+    localStorage.setItem(props, true);
+    let joined = this.state.localStorage.concat(props);
     this.setState({
-      flowerList: likePlant
+      localStorage: joined
     });
   };
+
+  isLoved = props => {
+    localStorage.getItem(props, true);
+
+  }
 
   handleDislike = props => {
     let flowerList = this.state.flowerList.filter(plant => plant.name !== props);
@@ -64,7 +71,10 @@ class Flowering extends Component {
                   <div className="card" style={{ width: '268px', height: '55vh',  position: 'relative', boxShadow: '10px 5px 20px' }}>
                     <img src={plant.image} alt={plant.name} style={{ height: '160px' }} />
                     <div className="card-body" style={{ width: '100%', height: '20vh', margin: '2% 0 4% 0', overflowY: 'hidden' }}>
-                      <h5 className="card-title">{plant.name}</h5>
+                      <h5 className="card-title">{plant.name} 
+                      {this.isLoved(plant.name) 
+                          ? <i className="fas fa-heart float-right" style={{ color:"red"}}></i>
+                          : ""}</h5>
                       <p className="card-text" style={{ paddingRight: '5px', height: '6.3rem', overflowY: 'auto' }}> {plant.description}</p>
 
 
