@@ -4,23 +4,4 @@ Flippy {
 
 }
 
-.card {
-  width: '268';
-  padding: 10px;
-  height: '201';
-}
 
-.card-body {
-  width: '268';
-  padding: 10px;
-  height: '201';
-}
-
-.card-img-top {
-  img {
-    border: 1px solid #ddd; /* Gray border */
-    border-radius: 4px;  /* Rounded border */
-    padding: 5px; /* Some padding */
-    width: 150px; /* Set a small width */
-  } 
-}
