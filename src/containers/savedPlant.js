@@ -7,18 +7,18 @@ class SavedPlant extends Component {
   state = {
     savedData: [],
     flowerList: [],
-    foliageList: [],
-    succulantList: [],
+    // foliageList: [],
+    // succulantList: [],
     localStorage: []
   };
   
   componentDidMount() {
     const plantName = this.props.match.params.plant.name;
-    
-    API.getPlantById(plantName)
-    // ?To set state, should I use date or plantId?
-    .then(res => this.setState({plantData: res.date})) 
-    .catch(err => console.log(err));
+    getLocalStorageFlower(plantName);
+    // API.getPlantById(plantName)
+    // // ?To set state, should I use date or plantId?
+    // .then(res => this.setState({plantData: res.date})) 
+    // .catch(err => console.log(err));
   }
   
   getLocalStorageFlower = () => {
@@ -28,26 +28,29 @@ class SavedPlant extends Component {
       ? storage.push(savedData)
       : ""
       ))
+      console.log("Flower savedData: " + savedData);
       this.setState({localStorage: storage});
     }
-  getLocalStorageFoliage = () => {
-    let storage = [];
-    this.state.foliageList.map( plant => (
-      localStorage.getItem(plant.name)
-      ? storage.push(savedData)
-      : ""
-    ))
-    this.setState({localStorage: storage});
-  }
-  getLocalStorageSucculant = () => {
-    let storage = [];
-    this.state.succulantList.map( plant => (
-      localStorage.getItem(plant.name)
-        ? storage.push(savedData)
-        : ""
-    ))
-    this.setState({localStorage: storage});
-  }
+  // getLocalStorageFoliage = () => {
+  //   let storage = [];
+  //   this.state.foliageList.map( plant => (
+  //     localStorage.getItem(plant.name)
+  //     ? storage.push(savedData)
+  //     : ""
+  //   ))
+  //   console.log("Foliage savedData: " + savedData);
+  //   this.setState({localStorage: storage});
+  // }
+  // getLocalStorageSucculant = () => {
+  //   let storage = [];
+  //   this.state.succulantList.map( plant => (
+  //     localStorage.getItem(plant.name)
+  //       ? storage.push(savedData)
+  //       : ""
+  //   ))
+  //   console.log("Succulent savedData: " + savedData);
+  //   this.setState({localStorage: storage});
+  // }
         
         
   render() {
