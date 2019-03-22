@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import Flowering from "./containers/flowering";
 import Succulents from "./containers/succulents";
 import Foliage from "./containers/foliage";
-import SavedPlant from "./containers/savedPlant"
+import SavedPlant from "./containers/savedPlant";
 
 const App = ()=> (
  
