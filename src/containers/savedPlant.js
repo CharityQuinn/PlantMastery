@@ -13,12 +13,11 @@ class SavedPlant extends Component {
   };
   
   componentDidMount() {
-    const plantName = this.props.match.params.plant.name;
-    getLocalStorageFlower(plantName);
-    // API.getPlantById(plantName)
-    // // ?To set state, should I use date or plantId?
-    // .then(res => this.setState({plantData: res.date})) 
-    // .catch(err => console.log(err));
+    //const plantName = this.props.match.params.plant.name;
+    //getLocalStorageFlower(plantName);
+    localStorage.getLocalStorageFlower(props);
+    
+    console.log(props);
   }
   
   getLocalStorageFlower = () => {
