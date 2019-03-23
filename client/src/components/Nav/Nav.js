@@ -9,7 +9,7 @@ const Nav = () => (
 <Navbar  bg="dark" variant="dark">
         <Link to={{pathname:"/"}}><Navbar.Brand>House Plants Advisor</Navbar.Brand></Link>
         <Link to={{pathname:"/"}}><Button >Home</Button></Link>
-        <Link to={{pathname:"/likedPlant"}}><Button >Love </Button></Link>
+        <Link to={{pathname:"/likedPlant"}}><Button >Love_<span><i class="fas fa-heart"></i></span></Button></Link>
         <Link to={{pathname:"/flowers"}}><Button >Flowering</Button></Link>
         <Link to={{pathname:"/foliage"}}><Button >Foliage</Button></Link>
         <Link to={{pathname:"/succulents"}}><Button >Succulents</Button></Link>
