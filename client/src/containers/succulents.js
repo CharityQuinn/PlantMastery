@@ -53,7 +53,7 @@ class Succulents extends Component {
     return (
       <div className="row" style={{ mergin: "0"}}>
         {this.state.succulentList.length ? this.state.succulentList.map(plant => (
-            <div className="col-12 col-sm-12 col-md-4 col-lg-3 plantCard mt-4" key={plant._id}>
+            <div className="col-12 col-sm-12 col-md-4 col-lg-3 plantCard mt-4 p-4" key={plant._id}>
              <div className="card"
               style={{
                 height: "55vh", width: '268px', position: "relative",
