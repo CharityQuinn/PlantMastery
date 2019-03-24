@@ -3,7 +3,7 @@ import API from '../utils/API';
 
 
 
-class SavedPlant extends Component {
+class LikedPlant extends Component {
   state = {
     savedData: [],
     flowerList: [],
@@ -95,4 +95,4 @@ class SavedPlant extends Component {
 
 
 
-export default SavedPlant;
+export default LikedPlant;

@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import Flowering from "./containers/flowering";
 import Succulents from "./containers/succulents";
 import Foliage from "./containers/foliage";
-import SavedPlant from "./containers/savedPlant";
+import LikedPlant from "./containers/likedPlant";
 
 const App = ()=> (
  
@@ -16,7 +16,7 @@ const App = ()=> (
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/savedPlant" render={() => <SavedPlant />} />
+            <Route exact path="/likedPlant" render={() => <LikedPlant />} />
             <Route exact path="/flowers" render={() => <Flowering />} />
             <Route exact path="/succulents" render={() => <Succulents />} />
             <Route exact path="/foliage" render={() => <Foliage />} />
