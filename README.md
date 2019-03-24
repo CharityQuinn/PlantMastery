@@ -14,12 +14,13 @@ The success of this project would not be possible without the assistance of our 
 
 # Homepage
 
-![plantMaster1](https://user-images.githubusercontent.com/45270593/54298041-6c877500-458e-11e9-8ade-d5915c4449e4.png)
+![Homepage](https://user-images.githubusercontent.com/45270593/54871262-ad01a280-4d87-11e9-90c4-6f5c8dd845f1.png)
+
 
 
 # Flowering page
 
-![plantMaster2](https://user-images.githubusercontent.com/45270593/54298148-9b055000-458e-11e9-84af-295e74cee3f8.png)
+![flowering](https://user-images.githubusercontent.com/45270593/54871274-d91d2380-4d87-11e9-8e3e-e9e3f88cc9f9.png)
 
 
 # Foliage page
@@ -29,7 +30,7 @@ The success of this project would not be possible without the assistance of our 
 
 # Succulents page
 
-![plantMaster4](https://user-images.githubusercontent.com/45270593/54298410-0f3ff380-458f-11e9-8602-603cdce2d949.png)
+![succulents](https://user-images.githubusercontent.com/45270593/54871284-ffdb5a00-4d87-11e9-9262-61386cd016c5.png)
 
 
 
@@ -40,7 +41,7 @@ Attached please find our [Presentaion:](https://docs.google.com/presentation/d/1
 
 
 
-# ------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
