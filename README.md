@@ -25,7 +25,7 @@ The success of this project would not be possible without the assistance of our 
 
 # Foliage page
 
-![plantMaster3](https://user-images.githubusercontent.com/45270593/54298209-b83a1e80-458e-11e9-933e-c963c1e5be42.png)
+![foliage](https://user-images.githubusercontent.com/45270593/54935649-18b64d80-4ef7-11e9-89d0-1c58057585cc.png)
 
 
 # Succulents page
