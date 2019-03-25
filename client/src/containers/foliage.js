@@ -3,7 +3,7 @@ import API from '../utils/API';
 
 class Foliage extends Component {
   state = {
-    foliageList: []
+    foliageList: [],
     localStorage: []
   };
 
