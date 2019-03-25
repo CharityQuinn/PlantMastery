@@ -3,14 +3,13 @@ import API from '../utils/API';
 
 class Foliage extends Component {
   state = {
-    foliageList: []
+    foliageList: [],
+    localStorage: []
   };
 
   componentDidMount() {
     this.getPlants();
-    // this.setState({
-    //   foliageList: this.props.foliage
-    // })
+    
   }
 
   getPlants = () => {
@@ -23,49 +22,73 @@ class Foliage extends Component {
           foliageList: foliages
         });
       }) 
+      .then(()=> this.getLocalStorage())
       .catch(err => console.log(err));
   };
 
+  getLocalStorage = () => {
+    let storage =[];
+    this.state.foliageList.map(plant => (
+      localStorage.getItem(plant.name)
+        ? storage.push(plant.name)
+        : ""
+    ))
+    this.setState({localStorage: storage});
+  }
 
-  handleLike = () => {
-    this.parents(".card").state.flowerList.likePlant = true;
+
+  handleLike = props => {
+    localStorage.setItem(props, true);
+    var joined = this.state.localStorage.concat(props);
+    this.setState({ localStorage: joined });
   };
 
-  handleDislike = () => {
-    this.parents(".card").hide();
-    // let flowerList = this.state.flowerList.map();
+
+  isLoved = props => localStorage.getItem(props);
+
+  handleDislike = props => {
+    let foliageList= this.state.foliageList.filter(plant => plant.name !== props);
+    this.setState({
+      foliageList: foliageList
+    });
   };
 
   render() {
+    
     return (
-      <div className="row">
-      <React.Fragment>
+      <div className="row" style={{ margin: "0" }}>
         {this.state.foliageList.length ? this.state.foliageList.map(plant => (
-            <div className="col-12 col-sm-6 col-md-4" key={plant._id}>
-              <div className="card">
-                <img src={plant.image} alt={plant.name} className="card-img-top" />
-                <div className="card-body" style={{width: "100%"}}>
-                  <h5 className="card-title">{plant.name}</h5>
-                  <p className="card-text">Description: {plant.description}</p>
-                  <p className="card-text">
-                    <strong>Description</strong>: {plant.description}{' '}
-                  </p>
-                  <a
-                    href={plant.link}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="btn btn-success btn-small">
-                    See More.
-                  </a>
-                  <button type="button" className="btn btn-link" id="BtnLike">Like Plant{plant.likePlant}</button>
-                  <button type="button" className="btn btn-link" id="BtnDisLike">Dislike Plant</button>
-                </div>
+          <div className="col-12 col-sm-12 col-md-4 col-lg-3 plantCard mt-4" key={plant._id}>
+            <div className="card"
+              style={{
+                height: "55vh", width: '268px', position: "relative",
+                boxShadow: '10px 5px 20px'
+              }}>
+
+              <img src={plant.image} alt={plant.name} style={{ height: '160px', boxShadow: '-1px 1px 20px', borderRadius: "20%" }} />
+
+              <div className="card-body"
+                style={{ width: '100%', height: '20vh', margin: '2% 0 4% 0', overflowY: 'hidden' }}>
+                <h5 className="card-title">{plant.name}
+                  {this.isLoved(plant.name)
+                    ? <i className="fas fa-heart float-right" style={{ color: "red" }}></i>
+                    : ""}
+                </h5>
+                <p className="card-text" style={{ paddingRight: "5px", height: "6.3rem", overflowY: "auto" }}> {plant.description}</p>
+              </div>
+
+              <div className="btn-group" role="group" aria-label="Basic example" style={{ postion: "absolute", bottom: "5px" }}>
+                <a href={plant.link} ><button type="button" className="btn btn-success">See More</button></a>
+                <button type="button" className="btn btn-primary" id="BtnLike" onClick={() => this.handleLike(plant.name)}>Like Plant</button>
+                <button type="button" className="btn btn-secondary" style={{ marginLeft: "-5px" }}
+                  id="BtnDisLike" onClick={() => this.handleDislike(plant.name)}>Dislike Plant</button>
               </div>
             </div>
+          </div>
         )) : ""}
-    </React.Fragment>
       </div>
-  )}
+    )
+  }
 
 };
 
