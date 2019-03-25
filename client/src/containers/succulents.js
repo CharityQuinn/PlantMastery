@@ -15,8 +15,8 @@ class Succulents extends Component {
   getPlants = () => {
     API.getSavedPlants()
       .then(res => {
-        let succulent = "Succulents and Cacti";
-        let succulent = res.data.filter(plant => plant.plantType === succulent);
+        let isSucculent = "Succulents and Cacti";
+        let succulent = res.data.filter(plant => plant.plantType === isSucculent);
         this.setState({
           succulentList: succulent
         });
