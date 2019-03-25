@@ -9,7 +9,7 @@ class LikedPlant extends Component {
   }
 
   componentDidMount() {
-    //const plantId = this.props.match.params.plantId;
+    
     this.getLikedPlant();
   }
 
@@ -19,7 +19,7 @@ class LikedPlant extends Component {
         likedList: addLiked
     })
     
-      console.log("Inside LikedPlant this is plantdata " + plant.name)
+      console.log("Inside LikedPlant this is plantdata " + addLiked.plant.name)
     .catch(err => console.log(err))
   }
   
