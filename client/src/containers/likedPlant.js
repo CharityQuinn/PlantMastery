@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 //import API from "../utils/API";
 
-
+let likedList = [];
 class LikedPlant extends Component {
   state = {
     likedList: [],
@@ -10,16 +10,19 @@ class LikedPlant extends Component {
 
   componentDidMount() {
     
-    this.getLikedPlant();
+    let plant = this.props.match.plantName
+    localStorage.getLocalStorageFlower(plant);
+    
+    console.log(plant);
   }
 
-  getLikedPlant = () => {
-    let addLiked = localStorage.getItem(storage);
+  getLocalStorageFlower = (plantName) => {
+    let addLiked = localStorage.getItem(plantName);
     this.setState({
         likedList: addLiked
     })
     
-      console.log("Inside LikedPlant this is plantdata " + addLiked.plant.name)
+      console.log("Inside LikedPlant this is plantdata " + likedList)
     .catch(err => console.log(err))
   }
   
