@@ -27,6 +27,15 @@ class LikedPlant extends Component {
     .catch(err => console.log(err))
   }
   
+  displayItems = () => {
+    var l, i;
+    for (i = 0; i < localStorage.length; i++) {
+    l = localStorage.key(i);
+    document.getElementById("demo").innerHTML += l + "<br>";
+    }
+  }
+
+
   render() {
     return (
       <div className="row" style={{ margin: "0" }}>
