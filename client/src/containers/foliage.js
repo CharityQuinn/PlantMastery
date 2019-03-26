@@ -68,7 +68,7 @@ class Foliage extends Component {
               <img src={plant.image} alt={plant.name} style={{ height: '160px', boxShadow: '-1px 1px 20px', borderRadius: "20%" }} />
 
               <div className="card-body"
-                style={{ width: '100%', height: '20vh', margin: '2% 0 4% 0', overflowY: 'hidden' }}>
+                style={{ width: '100%', height: '20vh', margin: '2% 0 4% 0' }}>
                 <h5 className="card-title">{plant.name}
                   {this.isLoved(plant.name)
                     ? <i className="fas fa-heart float-right" style={{ color: "red" }}></i>
