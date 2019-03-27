@@ -1,43 +1,37 @@
 import React, {Component} from "react";
-//import API from "../utils/API";
+import API from "../utils/API";
 
 let likedList = [];
+let savedData = [];
+let flower;
 
 class LikedPlant extends Component {
     state = {
     likedList: [],
-    savedData: {}
+    savedData: []
   }
 
   componentDidMount() {
-    let plant = this.props.match.plantName
-    localStorage.getLocalStorageFlower(plant);
-    
-    console.log(plant);
-  }
-
-  getLocalStorageFlower = (plantName) => {
-    let addLiked = localStorage.getItem(plantName);
-    console.log("This is addLiked from localStorage " + addLiked);
-    this.setState({
-        likedList: addLiked
-    })
-    
-      console.log("Inside LikedPlant this is plantdata " + likedList)
-    .catch(err => console.log(err))
-    //displayItems();
-  }
-  
-  displayItems=()=>{
-    var l, i;
+    let l, i;
     for (i = 0; i < localStorage.length; i++) {
     l = localStorage.key(i);
-    console.log(l + "<br>");
+    savedData.push(l);
     }
-
-  }
-
-
+    console.log(savedData);
+    this.setState({savedData})
+  };
+  getPlants = () => {
+    API.getSavedPlants()
+      .then(res => {
+        for(let j = 0; j < savedData.length; j++) {
+          let flower = localStorage.key(j)
+          flower = res.data.filter(plant => plant.name === flower);
+        }
+        this.setState({likedList: flower});
+      })
+      .catch(err => console.log(err));
+  };
+  
   render() {
     return (
       <div className="row" style={{ margin: "0" }}>

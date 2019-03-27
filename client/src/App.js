@@ -16,7 +16,7 @@ const App = ()=> (
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/liked-plant/:plantName" render={() => <LikedPlant />} />
+            <Route exact path="/likedPlant" render={() => <LikedPlant />} />
             <Route exact path="/flowers" render={() => <Flowering />} />
             <Route exact path="/succulents" render={() => <Succulents />} />
             <Route exact path="/foliage" render={() => <Foliage />} />
