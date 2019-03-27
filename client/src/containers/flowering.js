@@ -32,7 +32,7 @@ class Flowering extends Component {
           : ""
     ))
     this.setState({localStorage: storage});
-    
+
   }
 
   handleLike = props => {
@@ -75,7 +75,7 @@ class Flowering extends Component {
 
               <div className="btn-group" role="group" aria-label="Basic example" style={{ postion: "absolute", bottom: "5px" }}>
                 <a href={plant.link} ><button type="button" className="btn btn-success">See More</button></a>
-                <button type="button" className="btn btn-primary" id="BtnLike" onClick={() => this.handleLike(plant.name)}>Like Plant</button>
+                <button type="button" className="btn btn-primary" id="BtnLike" onClick={() => {this.handleLike(plant.name)}}>Like Plant</button>
                 <button type="button" className="btn btn-secondary" style={{ marginLeft: "-5px" }}
                 id="BtnDisLike" onClick={() => this.handleDislike(plant.name)}>Dislike Plant</button>
               </div>

@@ -25,14 +25,16 @@ class LikedPlant extends Component {
     
       console.log("Inside LikedPlant this is plantdata " + likedList)
     .catch(err => console.log(err))
+    //displayItems();
   }
   
-  displayItems = () => {
+  displayItems=()=>{
     var l, i;
     for (i = 0; i < localStorage.length; i++) {
     l = localStorage.key(i);
-    document.getElementById("demo").innerHTML += l + "<br>";
+    console.log(l + "<br>");
     }
+
   }
 
 
