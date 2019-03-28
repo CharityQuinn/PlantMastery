@@ -28,11 +28,12 @@ class LikedPlant extends Component {
     API.getSavedPlants()
       .then(res => {
         for(let j = 0; j < savedData.length; j++) {
-          let flower = localStorage.key(j)
+          flower = localStorage.key(j)
           console.log("flower is " + flower);
           flower = res.data.filter(plant => plant.name === flower);
+          likedList.push(flower);
         }
-        this.setState({likedList: flower});
+        this.setState({likedList});
         console.log("This is likedList with a new plant " + likedList);
       })
       .catch(err => console.log(err));
@@ -41,11 +42,11 @@ class LikedPlant extends Component {
   render() {
     return (
       <div className="row" style={{ margin: "0" }}>
-        {this.state.savedData.length ? this.state.savedData.map(plant => (
+        {this.state.likedList.length ? this.state.likedList.map(plant => (
           <div className="col-12 col-sm-12 col-md-4 col-lg-3 plantCard mt-4" key={plant._id}>
             <div className="card"
               style={{
-              height: "55vh", width: '268px', position: "relative",
+              height: "65vh", width: '268px', position: "relative",
               boxShadow: '10px 5px 20px'
               }}>
   
