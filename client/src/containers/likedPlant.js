@@ -22,12 +22,15 @@ class LikedPlant extends Component {
   };
   getPlants = () => {
     API.getSavedPlants()
+    let plant = []
       .then(res => {
         for(let j = 0; j < savedData.length; j++) {
           let flower = localStorage.key(j)
+          console.log("flower is " + flower +" plant is " + plant);
           flower = res.data.filter(plant => plant.name === flower);
         }
         this.setState({likedList: flower});
+        console.log("This is likedList with a new plant " + likedList);
       })
       .catch(err => console.log(err));
   };
