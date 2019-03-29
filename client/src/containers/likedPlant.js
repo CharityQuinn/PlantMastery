@@ -4,7 +4,7 @@ import API from "../utils/API";
 let likedList = [];
 let savedData = [];
 let flower;
-let plant = [];
+//let plant = [];
 
 class LikedPlant extends Component {
     state = {
@@ -27,14 +27,18 @@ class LikedPlant extends Component {
   getPlants = () => {
     API.getSavedPlants()
       .then(res => {
+        
         for(let j = 0; j < savedData.length; j++) {
           flower = localStorage.key(j)
-          console.log("flower is " + flower);
-          flower = res.data.filter(plant => plant.name === flower);
-          likedList.push(flower);
+          console.log("Saved plant is " + flower);
+          //likedList.push(flower);
         }
-        this.setState({likedList});
-        console.log("This is likedList with a new plant " + likedList);
+        flower = res.data.filter(plant => {
+          return plant.name === flower;
+        });
+        this.setState({likedList: flower});
+        console.log("This is likedList with a new plant " + flower);
+        
       })
       .catch(err => console.log(err));
   };
