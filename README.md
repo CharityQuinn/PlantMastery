@@ -32,6 +32,10 @@ The success of this project would not be possible without the assistance of our 
 
 ![succulents](https://user-images.githubusercontent.com/45270593/54871284-ffdb5a00-4d87-11e9-9262-61386cd016c5.png)
 
+# Liked Plants page
+
+![image](https://user-images.githubusercontent.com/44899945/55292401-772c7180-53b8-11e9-882d-3b87f2afded7.png)
+
 
 
 If you have any questions about this app or would like to contact me, please contact me at my [email](charityaquinn@gmail.com)
