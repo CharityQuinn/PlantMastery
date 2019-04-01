@@ -38,6 +38,7 @@ class Flowering extends Component {
     localStorage.setItem(props, true);
     var joined = this.state.localStorage.concat(props);
     this.setState({ localStorage: joined });
+    console.log("HandleLike joined: " + joined);
   };
 
   isLoved = props => localStorage.getItem(props);
@@ -57,14 +58,12 @@ class Flowering extends Component {
           <div className="col-12 col-sm-12 col-md-4 col-lg-3 plantCard mt-4" key={plant._id}>
             <div className="card"
               style={{
-                height: "55vh", width: '268px', position: "relative",
-                boxShadow: '10px 5px 20px'
-              }}>
+                height: "65vh", width: '268px', position: "relative", boxShadow: '10px 5px 20px'}}>
 
-              <img src={plant.image} alt={plant.name} style={{ height: '160px', boxShadow: '-1px 1px 20px', borderRadius: "20%" }} />
+              <img src={plant.image} alt={plant.name} style={{ height: '160px', boxShadow: '-1px 1px 20px', borderRadius: "20%", margin: "2px" }} />
 
               <div className="card-body"
-                style={{ width: '100%', height: '20vh', margin: '2% 0 4% 0', overflowY: 'hidden' }}>
+                style={{ width: '100%', height: '20vh', margin: '2% 0 4% 0'}}>
                 <h5 className="card-title">{plant.name}
                   {this.isLoved(plant.name)
                     ? <i className="fas fa-heart float-right" style={{ color: "red" }}></i>
@@ -75,9 +74,9 @@ class Flowering extends Component {
 
               <div className="btn-group" role="group" aria-label="Basic example" style={{ postion: "absolute", bottom: "5px" }}>
                 <a href={plant.link} ><button type="button" className="btn btn-success">See More</button></a>
-                <button type="button" className="btn btn-primary" id="BtnLike" onClick={() => this.handleLike(plant.name)}>Like Plant</button>
+                <button type="button" className="btn btn-primary" id="BtnLike" onClick={() => {this.handleLike(plant.name)}}>Like Plant</button>
                 <button type="button" className="btn btn-secondary" style={{ marginLeft: "-5px" }}
-                  id="BtnDisLike" onClick={() => this.handleDislike(plant.name)}>Dislike Plant</button>
+                id="BtnDisLike" onClick={() => this.handleDislike(plant.name)}>Dislike Plant</button>
               </div>
             </div>
           </div>
