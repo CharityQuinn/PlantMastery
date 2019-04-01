@@ -32,6 +32,7 @@ class Flowering extends Component {
           : ""
     ))
     this.setState({localStorage: storage});
+
   }
 
   handleLike = props => {
