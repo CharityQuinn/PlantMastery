@@ -1,0 +1,32 @@
+
+.card {
+  height: '245px';
+  width:'320px';
+  position: relative;
+  box-shadow:'10px 5px 20px';
+  
+}
+
+#plantImg {
+  width:'310px';
+  height: '145px';
+  box-shadow: '-1pxn 1px 20px';
+  border-radius: '20%';
+}
+
+.card-body .card-title {
+  margin:'2% 0 4% 0';
+}
+
+.card-text {
+  width:'320px';
+  padding-right:'5px';
+  height:'6.3rem';
+  overflow-y: auto;
+}
+
+.btn-group {
+  position: absolute;
+  bottom: "5px";
+  margin-left: "-5px";
+}
