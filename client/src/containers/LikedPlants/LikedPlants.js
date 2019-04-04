@@ -67,10 +67,7 @@ class LikedPlants extends Component {
       <div className="row" style={{ margin: "0" }}>
         {this.state.likedList.length ? this.state.likedList.map(plant => (
           <div className="col-12 col-sm-12 col-md-4 col-lg-3 plantCard mt-4" key={plant._id}>
-            <div className="card"
-              style={{
-                height: "65vh", width: '268px', position: "relative", boxShadow: '10px 5px 20px'
-              }}>
+            <div className="card" style={{height: '65vh', width:'268px', position: 'relative', boxShadow:'10px 5px 20px'}}>
 
               <img src={plant.image} alt={plant.name} style={{ height: '160px', boxShadow: '-1px 1px 20px', borderRadius: "20%" }} />
 
