@@ -61,7 +61,7 @@ class Flowering extends Component {
               style={{
                 height: "65vh", width: '268px', position: "relative", boxShadow: '10px 5px 20px'}}>
 
-              <img src={plant.image} alt={plant.name} style={{ height: '160px', boxShadow: '-1px 1px 20px', borderRadius: "20%" }} />
+              <img src={plant.image} alt={plant.name} style={{ height: '160px', boxShadow: '-1px 1px 20px', borderRadius: "20%", margin: "2px" }} />
 
               <div className="card-body"
                 style={{ width: '100%', height: '20vh', margin: '2% 0 4% 0'}}>
