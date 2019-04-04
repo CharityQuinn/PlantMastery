@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
-import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import './LikedPlant.css';
 
 
