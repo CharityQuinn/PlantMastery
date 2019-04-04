@@ -25,12 +25,16 @@ The success of this project would not be possible without the assistance of our 
 
 # Foliage page
 
-![plantMaster3](https://user-images.githubusercontent.com/45270593/54298209-b83a1e80-458e-11e9-933e-c963c1e5be42.png)
+![foliage](https://user-images.githubusercontent.com/45270593/54935649-18b64d80-4ef7-11e9-89d0-1c58057585cc.png)
 
 
 # Succulents page
 
 ![succulents](https://user-images.githubusercontent.com/45270593/54871284-ffdb5a00-4d87-11e9-9262-61386cd016c5.png)
+
+# Liked Plants page
+
+![image](https://user-images.githubusercontent.com/44899945/55292401-772c7180-53b8-11e9-882d-3b87f2afded7.png)
 
 
 
